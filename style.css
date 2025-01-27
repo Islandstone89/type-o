@@ -122,6 +122,7 @@ textarea:not([rows]) {
 
 
 body {
+    padding: 10px;
     background-color: var(--clr-dark);
     color: var(--clr-green);
     text-align: center;
@@ -142,10 +143,15 @@ body {
 
 .section-heading {
     margin-block-end: 2rem;
+    font-size: 2rem;
 }
 
 .header {
     padding-block: 2rem;
+}
+
+.nav__menu {
+    font-size: 1.25rem;
 }
 
 .lineup-wrapper {
@@ -173,9 +179,14 @@ body {
 
 .member__image {
     object-fit: cover;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
+    transition: transform 250ms;
+
+    &:is(:hover, :focus-visible) {
+        transform: scale(1.05);
+    }
 }
 
 .member__instrument {
@@ -200,9 +211,40 @@ body {
 }
 
 .album__image {
+    aspect-ratio: 1;
     object-fit: cover;
-    height: 200px;
-    width: 200px;
+    width: 300px;
     border-radius: 10px;
+    transition: transform 250ms;
+
+    &:is(:hover, :focus-visible) {
+        transform: scale(1.05);
+    }
 }
 
+.footer {
+    position: relative;
+    padding-block: 2rem;
+    
+    &::before {
+        position: absolute;
+        top: 0;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--clr-green);
+        opacity: .25;
+    }
+}
+
+.icon-heart {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.footer__link {
+    text-decoration: underline;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 2.5px;
+}
