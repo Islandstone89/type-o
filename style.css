@@ -1,0 +1,208 @@
+
+/* CSS RESET */
+
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  line-height: 1.5;
+}
+
+img, 
+picture
+ {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+:is(ul, ol) {
+  list-style-type: "";
+  padding: 0;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+
+/* FONTS */
+
+@font-face {
+    font-display: swap;
+    font-family: 'Metal Mania';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/metal-mania-v22-latin-regular.woff2') format('woff2');
+  }
+
+@font-face {
+    font-display: swap;
+    font-family: 'Pirata One';
+    font-style: normal;
+    font-weight: 400;
+    src: url('assets/fonts/pirata-one-v22-latin-regular.woff2');
+  }
+
+
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    --clr-dark: hsl(0, 0%, 5%);
+    --clr-green: hsl(130, 97%, 44%);
+
+    --ff1: 'Metal Mania';
+    --ff2: 'Pirata One';
+
+    --spacing-4px: 4px;
+}
+
+
+
+/* UTILITIES */
+
+.flow {
+    --flow-space: var(--spacing-4px);
+}
+
+.flow > * + * {
+    margin-block-start: var(--flow-space, 1em);
+}
+
+
+
+body {
+    background-color: var(--clr-dark);
+    color: var(--clr-green);
+    text-align: center;
+    font-family: var(--ff1);
+    /* font-family: var(--ff2); */
+    /* letter-spacing: 0.1em; */
+}
+
+:is(.header, .main, .footer) {
+    max-width: 65rem;
+    margin-inline: auto;
+}
+
+.main-heading {
+    margin-block-end: 1rem;
+    font-size: 3rem;
+}
+
+.section-heading {
+    margin-block-end: 2rem;
+}
+
+.header {
+    padding-block: 2rem;
+}
+
+.lineup-wrapper {
+    padding-block: 3rem 2rem;
+}
+
+.discography-wrapper {
+    padding-block: 1rem 2rem;
+}
+
+.members {
+    --min-width: 230px;
+    --grid-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-width, 100%)), 1fr));
+    gap: var(--grid-gap);
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.member__image {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.member__instrument {
+    font-style: italic;
+}
+
+
+.albums {
+    --min-width: 300px;
+    --grid-gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(var(--min-width, 100%)), 1fr));
+    gap: var(--grid-gap);
+    padding-block: 3rem;
+}
+
+.album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.album__image {
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+}
+
