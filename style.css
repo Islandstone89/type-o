@@ -182,7 +182,7 @@ body {
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    transition: transform 250ms;
+    transition: transform 250ms ease-in-out;
 
     &:is(:hover, :focus-visible) {
         transform: scale(1.05);
@@ -215,7 +215,7 @@ body {
     object-fit: cover;
     width: 300px;
     border-radius: 10px;
-    transition: transform 250ms;
+    transition: transform 250ms ease-in-out;
 
     &:is(:hover, :focus-visible) {
         transform: scale(1.05);
