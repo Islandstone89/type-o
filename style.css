@@ -120,6 +120,9 @@ textarea:not([rows]) {
 }
 
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     padding: 10px;
@@ -200,7 +203,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--min-width, 100%)), 1fr));
     gap: var(--grid-gap);
-    padding-block: 3rem;
+    padding-block: 2rem;
 }
 
 .album {
