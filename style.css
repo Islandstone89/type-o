@@ -248,10 +248,14 @@ body {
 
 .albums {
     --min-width: 300px;
-    --grid-gap: 40px;
+    --grid-gap: 60px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(var(--min-width, 100%)), 1fr));
     gap: var(--grid-gap);
+
+    @media (width > 60rem) {
+      --grid-gap: 40px;
+    }
 }
 
 .album {
