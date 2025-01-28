@@ -130,8 +130,7 @@ body {
     color: var(--clr-green);
     text-align: center;
     font-family: var(--ff1);
-    /* font-family: var(--ff2); */
-    /* letter-spacing: 0.1em; */
+    letter-spacing: 0.1em;
 }
 
 :is(.header, .main, .footer) {
@@ -155,6 +154,15 @@ body {
 
 .nav__menu {
     font-size: 1.25rem;
+}
+
+.nav__link {
+
+  &:is(:hover, :focus-visible) {
+    opacity: .75;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 }
 
 .lineup-wrapper {
@@ -250,4 +258,20 @@ body {
     text-decoration: underline;
     text-decoration-thickness: 2.5px;
     text-underline-offset: 2.5px;
+}
+
+
+.members:has(.member__image:is(:hover, :focus-visible)) {
+  
+  .member:not(:is(:hover, :focus-visible)) {
+    opacity: .75;
+  }
+}
+
+.member:has(.member__image:is(:hover, :focus-visible)) {
+  
+  .member__heading {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 }
